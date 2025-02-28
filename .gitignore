@@ -1,0 +1,33 @@
+# Ignore Python cache and compiled files
+__pycache__/
+*.pyc
+*.pyo
+
+# Ignore virtual environment
+env1/
+venv/
+*.env
+
+# Ignore database files
+instance/*.db
+database/
+
+# Ignore uploaded and output images
+static/uploads/
+static/outputs/
+
+# Ignore system and editor-specific files
+.DS_Store
+.vscode/
+.idea/
+*.swp
+
+# Ignore dependencies
+requirements.txt
+
+# Ignore logs and temp files
+*.log
+*.tmp
+env1/
+env1/lib/python3.11/site-packages/tensorflow/libtensorflow_cc.2.dylib
+env1/lib/python3.11/site-packages/clang/native/libclang.dylib
