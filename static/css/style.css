@@ -1,0 +1,178 @@
+/* Define CSS variables for themes */
+:root {
+    --bg-color: #ff6f61; /* default vibrant gradient start */
+    --bg-gradient: linear-gradient(135deg, #ff6f61, #ffc371);
+    --container-bg: rgba(255, 255, 255, 0.9);
+    --text-color: #333;
+    --button-bg: #00aaff;
+    --button-hover: #0088cc;
+    --title-shadow: 3px 3px 10px rgba(0,0,0,0.3);
+}
+
+/* Dark theme overrides */
+.dark-theme {
+    --bg-color: #222;
+    --bg-gradient: #222;
+    --container-bg: rgba(34, 34, 34, 0.9);
+    --text-color: #fff;
+    --button-bg: #ff6f61;
+    --button-hover: #ff4f41;
+    --title-shadow: 2px 2px 8px rgba(0,0,0,0.8);
+}
+
+/* Vibrant theme (default) */
+.vibrant-theme {
+    --bg-color: var(--bg-gradient);
+    --container-bg: rgba(255, 255, 255, 0.9);
+    --text-color: #333;
+    --button-bg: #00aaff;
+    --button-hover: #0088cc;
+    --title-shadow: 3px 3px 10px rgba(0,0,0,0.3);
+}
+
+body {
+    background: var(--bg-color);
+    color: var(--text-color);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    transition: background 0.3s, color 0.3s;
+}
+
+/* Header with toggle button */
+header {
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px 20px;
+}
+
+#theme-toggle {
+    padding: 8px 16px;
+    background: var(--button-bg);
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    transition: background 0.3s, transform 0.3s;
+}
+
+#theme-toggle:hover {
+    background: var(--button-hover);
+    transform: translateY(-2px);
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 20px;
+    background: var(--container-bg);
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+.title {
+    text-align: center;
+    margin-bottom: 20px;
+    text-shadow: var(--title-shadow);
+}
+
+/* Upload box with 3D effect */
+.upload-box {
+    background: rgba(0,0,0,0.05);
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    text-align: center;
+    transform: perspective(500px) rotateX(2deg);
+}
+
+.upload-box input[type="file"] {
+    padding: 10px;
+    margin-bottom: 20px;
+    border: none;
+    background: #fff;
+    color: var(--text-color);
+    border-radius: 5px;
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.upload-box button {
+    padding: 10px 20px;
+    background: var(--button-bg);
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: transform 0.3s, background 0.3s;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+}
+
+.upload-box button:hover {
+    transform: translateY(-3px);
+    background: var(--button-hover);
+}
+
+/* Image preview and results gallery styling */
+.image-preview, .results-gallery, .chart-section {
+    margin-top: 30px;
+    text-align: center;
+}
+
+/* Limit the input image preview size */
+.image-preview img {
+    max-width: 600px;
+    width: auto;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Ensure output images display consistently */
+.results-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.result-item {
+    background: rgba(0,0,0,0.05);
+    margin: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    transform: perspective(500px) rotateY(2deg);
+}
+
+.result-item img {
+    max-width: 300px;
+    width: auto;
+    height: auto;
+    transition: transform 0.3s;
+}
+
+.result-item img:hover {
+    transform: scale(1.05);
+}
+
+.actions {
+    margin-top: 10px;
+}
+
+.actions a, .actions button {
+    margin: 5px;
+    padding: 5px 10px;
+    background: var(--button-bg);
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.actions a:hover, .actions button:hover {
+    background: var(--button-hover);
+}

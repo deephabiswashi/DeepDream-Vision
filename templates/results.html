@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DeepDream Vision - Results</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <header>
+        <button id="theme-toggle" onclick="toggleTheme()">Toggle Theme</button>
+    </header>
+    <div class="container">
+        <h1 class="title">DeepDream Results</h1>
+        <div class="image-preview">
+            <h2>Input Image</h2>
+            <img src="{{ input_image }}" alt="Input Image">
+        </div>
+        <div class="results-gallery">
+            <h2>Dream-like Outputs</h2>
+            {% for layer, path in outputs.items() %}
+            <div class="result-item">
+                <h3>Layer: {{ layer }}</h3>
+                <img src="{{ url_for('static', filename=path) }}" alt="DeepDream {{ layer }}">
+                <div class="actions">
+                    <a href="{{ url_for('static', filename=path) }}" download>Download</a>
+                    <button onclick="copyImage('{{ url_for('static', filename=path) }}')">Copy URL</button>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="chart-section">
+            <h2>Model Activation Chart</h2>
+            <img src="{{ chart }}" alt="Activation Chart">
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

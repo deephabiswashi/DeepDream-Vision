@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DeepDream Vision - Upload Image</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <header>
+        <button id="theme-toggle" onclick="toggleTheme()">Toggle Theme</button>
+    </header>
+    <div class="container">
+        <h1 class="title">DeepDream Vision</h1>
+        <div class="upload-box">
+            <form method="POST" enctype="multipart/form-data">
+                <input type="file" name="image" accept="image/*" required>
+                <button type="submit">Upload and Dream</button>
+            </form>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
